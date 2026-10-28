@@ -1,0 +1,248 @@
+/* ========================================================
+   ElectroMart - Modern Tech Theme with Synchronized Gradients
+   Light & Dark Mode Dynamic Variables
+   ======================================================== */
+
+:root {
+    --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    
+    /* Core Gradients */
+    --grad-primary: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+    --grad-secondary: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    --grad-accent: linear-gradient(135deg, #f43f5e 0%, #fb923c 100%);
+    --grad-surface-dark: linear-gradient(135deg, #0b0f1a 0%, #131b2e 50%, #0d1322 100%);
+    --grad-hero-light: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #0284c7 100%);
+    --grad-card-glow: linear-gradient(135deg, rgba(79, 70, 229, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%);
+
+    /* Light Theme (Default) */
+    --bg-body: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-surface-elevated: #ffffff;
+    --bg-subtle: #f1f5f9;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --border-color-subtle: #f1f5f9;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+    --shadow-glow: 0 0 25px rgba(79, 70, 229, 0.25);
+    --navbar-bg: rgba(255, 255, 255, 0.88);
+    --input-bg: #ffffff;
+    --input-border: #cbd5e1;
+    --badge-bg: #eff6ff;
+    --badge-text: #2563eb;
+}
+
+[data-bs-theme="dark"] {
+    /* Dark Theme */
+    --bg-body: #090d16;
+    --bg-surface: #111827;
+    --bg-surface-elevated: #1f2937;
+    --bg-subtle: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #2e384d;
+    --border-color-subtle: #1e293b;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 12px 30px -5px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 30px rgba(6, 182, 212, 0.25);
+    --navbar-bg: rgba(15, 23, 42, 0.9);
+    --input-bg: #1e293b;
+    --input-border: #334155;
+    --badge-bg: rgba(79, 70, 229, 0.2);
+    --badge-text: #93c5fd;
+}
+
+/* Global Body & Typography */
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* Gradient Utilities */
+.gradient-text {
+    background: var(--grad-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.gradient-text-accent {
+    background: var(--grad-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.bg-gradient-primary {
+    background: var(--grad-primary) !important;
+}
+
+.bg-gradient-secondary {
+    background: var(--grad-secondary) !important;
+}
+
+.bg-gradient-accent {
+    background: var(--grad-accent) !important;
+}
+
+.btn-gradient {
+    background: var(--grad-primary);
+    color: #ffffff !important;
+    border: none;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
+    filter: brightness(1.08);
+}
+
+.btn-gradient-secondary {
+    background: var(--grad-secondary);
+    color: #ffffff !important;
+    border: none;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.btn-gradient-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.4);
+}
+
+.btn-gradient-outline {
+    background: transparent;
+    position: relative;
+    color: var(--text-main);
+    border: 2px solid transparent;
+    background-image: linear-gradient(var(--bg-surface), var(--bg-surface)), var(--grad-primary);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.btn-gradient-outline:hover {
+    background-image: var(--grad-primary), var(--grad-primary);
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+/* Navbar */
+.navbar-themed {
+    background: var(--navbar-bg) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+/* Cards & Modals */
+.card-themed {
+    background: var(--bg-surface) !important;
+    color: var(--text-main) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-themed:hover {
+    border-color: rgba(79, 70, 229, 0.5) !important;
+    transform: translateY(-4px);
+    box-shadow: 0 16px 35px -10px rgba(79, 70, 229, 0.25);
+}
+
+.modal-content {
+    background-color: var(--bg-surface) !important;
+    color: var(--text-main) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* Form Controls */
+.form-control, .form-select {
+    background-color: var(--input-bg) !important;
+    color: var(--text-main) !important;
+    border-color: var(--input-border) !important;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2) !important;
+}
+
+/* Tables */
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--text-main);
+    border-color: var(--border-color);
+}
+
+/* Submenu Navigation Pills for Split Home Menu */
+.menu-tab-btn {
+    padding: 0.85rem 1.6rem;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: var(--shadow-sm);
+}
+
+.menu-tab-btn:hover {
+    color: #4f46e5;
+    border-color: #4f46e5;
+    transform: translateY(-2px);
+    background: var(--bg-subtle);
+}
+
+.menu-tab-btn.active {
+    background: var(--grad-primary);
+    color: #ffffff !important;
+    border-color: transparent;
+    box-shadow: 0 8px 24px rgba(79, 70, 229, 0.35);
+}
+
+.menu-tab-btn .badge-pill-count {
+    background: rgba(255, 255, 255, 0.25);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+}
+
+/* Dark mode toggle switch button */
+.theme-toggle-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    background: var(--bg-surface);
+    color: var(--text-main);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-size: 1.15rem;
+}
+
+.theme-toggle-btn:hover {
+    border-color: #6366f1;
+    transform: rotate(15deg) scale(1.05);
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+}
